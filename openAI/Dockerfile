@@ -4,8 +4,8 @@ FROM python:3.9-slim
 # Establece el directorio de trabajo en /app
 WORKDIR /app
 
-# Copia el archivo app.py al directorio de trabajo
-COPY app.py .
+# Copia el archivo chatpi.py al directorio de trabajo
+COPY chatpi.py .
 
 # Copia el archivo requirements.txt al directorio de trabajo
 COPY requirements.txt .
@@ -20,4 +20,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Define el comando para iniciar la aplicación
-CMD ["python", "app.py"]
+CMD ["python", "chatpi.py"]
