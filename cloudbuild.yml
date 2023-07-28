@@ -1,0 +1,24 @@
+steps:
+  # Configura el entorno
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['config', 'set', 'project', 'desafio-de-tripulaciones']
+
+  # Construye la imagen del contenedor
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/desafio-de-tripulaciones/apichatgpt', './openAI']
+
+  # Sube la imagen al Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/desafio-de-tripulaciones/apichatgpt']
+
+  # Implementa la imagen en Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+        - run
+        - deploy
+        - mi-servicio-chatgpt
+        - --image=gcr.io/desafio-de-tripulaciones/apichatgpt
+        - --region=europe-west1
+        - --platform=managed
+        - --allow-unauthenticated
+        - --port=5000
