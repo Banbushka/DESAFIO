@@ -26,4 +26,4 @@ def get_gpt_answer(question):
     return response.choices[0].text.strip()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
