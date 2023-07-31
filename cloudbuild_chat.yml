@@ -1,0 +1,33 @@
+steps:
+  # Configura el entorno1
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['config', 'set', 'project', 'desafio-de-tripulaciones']
+
+  # Construye la imagen del contenedor
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/desafio-de-tripulaciones/apichatgpt', './openAI']
+
+  # Sube la imagen al Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/desafio-de-tripulaciones/apichatgpt']
+
+  # Implementa la imagen en Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    entrypoint: bash
+    args: [
+        "-c",
+        "gcloud run deploy mi-servicio-chatgpt
+            --image=gcr.io/desafio-de-tripulaciones/apichatgpt
+            --region=europe-west1
+            --platform=managed
+            --allow-unauthenticated
+            --port=5000
+            --update-env-vars OPENAI_API_KEY=$$OPENAI_API_KEY"
+      ]
+    secretEnv: [
+        'OPENAI_API_KEY'
+      ]
+availableSecrets:
+      secretManager:
+        - versionName: projects/133006933274/secrets/apikey/versions/latest
+          env: OPENAI_API_KEY
