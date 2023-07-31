@@ -2,3 +2,4 @@ flask
 openai
 dotenv
 os
+setuptools==58.2.0
