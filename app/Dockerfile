@@ -1,4 +1,4 @@
-# Utiliza una imagen base de Python con Flask instalado
+# Utiliza una imagen base de Python con Flask instalado1
 FROM python:3.9-slim
 
 # Establece el directorio de trabajo en /app
