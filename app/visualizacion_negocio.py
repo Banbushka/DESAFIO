@@ -242,4 +242,4 @@ def main():
                 st.header('Lo más probable es que este usuario obtenga una puntuación de 7 o superior en el cuestionario.  No requiere avisos adicionales en este momento')
 
 if __name__ == '__main__':
-    main(host='0.0.0.0', port=8501)
+    main()
