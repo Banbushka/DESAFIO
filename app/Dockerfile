@@ -14,7 +14,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expone el puerto en el que se ejecuta la aplicación
-EXPOSE 8504
+EXPOSE 8501
 
 # Define el comando para iniciar la aplicación
 CMD ["python", "visualizacion_negocio.py"]

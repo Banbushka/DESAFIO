@@ -3,8 +3,6 @@ import pandas as pd
 import numpy as np
 import pickle
 
-PORT = 8504
-st.set_option("server.port", PORT)
 def main():
     # Ajustamos la página con un icono en el buscador y el título
     st.set_page_config(page_title="Healty", page_icon=":thermometer:", layout="wide")
@@ -244,4 +242,4 @@ def main():
                 st.header('Lo más probable es que este usuario obtenga una puntuación de 7 o superior en el cuestionario.  No requiere avisos adicionales en este momento')
 
 if __name__ == '__main__':
-    main()
+    main(host='0.0.0.0', port=8501)
