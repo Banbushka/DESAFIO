@@ -1,6 +1,8 @@
 # Se muestran las dependencias necesarias para ejecutar el proyecto en app.py
-# Se necesitan únicamente pandas y streamlit, ya que se utiliza poco código basándonos en el uso de imágenes creadas en los notebooks anteriores
+# Se necesidan únicamente pandas y streamlit, ya que se utiliza poco código basándonos en el uso de imágenes creadas en los notebooks anteriores
 pandas 
-streamlit
+streamlit 
+os 
 numpy
-
+pickle
+sklearn
