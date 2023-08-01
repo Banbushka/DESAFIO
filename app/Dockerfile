@@ -17,4 +17,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8501
 
 # Define el comando para iniciar la aplicación
-CMD ["python", "visualizacion_negocio.py"]
+CMD ["streamlit run", "visualizacion_negocio.py"]
