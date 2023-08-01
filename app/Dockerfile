@@ -5,10 +5,7 @@ FROM python:3.9-slim
 WORKDIR /app
 
 # Copia el archivo chatpi.py al directorio de trabajo
-COPY visualizacion_negocio.py .
-
-# Copia el archivo requirements.txt al directorio de trabajo
-COPY requirements.txt .
+COPY . .
 
 # Instala las dependencias del proyecto
 RUN pip install --no-cache-dir -r requirements.txt
@@ -17,4 +14,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 8501
 
 # Define el comando para iniciar la aplicación
-CMD ["streamlit run", "visualizacion_negocio.py"]
+CMD ["streamlit", "run", "visualizacion_negocio.py"]
