@@ -21,4 +21,4 @@ steps:
         - --region=europe-west1
         - --platform=managed
         - --allow-unauthenticated
-        - --port=8501
+        - --port=8504
