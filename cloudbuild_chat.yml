@@ -29,5 +29,5 @@ steps:
       ]
 availableSecrets:
       secretManager:
-        - versionName: projects/133006933274/secrets/apikey/versions/latest
+        - versionName: projects/133006933274/secrets/apikeychatgpt/versions/latest
           env: OPENAI_API_KEY
